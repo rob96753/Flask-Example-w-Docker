@@ -1,0 +1,6 @@
+{
+  "products": "bloodProducts.json",
+  "donors": "donors.json",
+  "blood_types": ["APOS", "ANEG", "BPOS", "BNEG", "ABPOS", "ABNEG", "OPOS", "ONEG"],
+  "locations": {"site": "Role 4 LANDSTUHL REGIONAL MED CTR","uic":  "W1HHAA"}
+}

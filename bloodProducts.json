@@ -1,0 +1,10 @@
+{"products":[
+	{"product":"E0206V00","type":"RBC","expire":"42"},
+	{"product":"E0195V00","type":"RBC","expire":"42"},
+	{"product":"E4635V00","type":"PLT","expire":"5"},
+	{"product":"E5078V00","type":"FRBC","expire":"365"},
+	{"product":"E4995V00","type":"DRBC","expire":"365"},
+	{"product":"E0001V00","type":"WB","expire":"42"},
+	{"product":"E5480V00","type":"FFP","expire":"365"},
+	{"product":"E5165V00","type":"CRYO","expire":"365"}
+]}
