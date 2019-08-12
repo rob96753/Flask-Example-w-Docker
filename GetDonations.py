@@ -120,7 +120,7 @@ class Donors(Resource):
                 donors = json.load(json_file)
             with open(os.path.join(configFilePath, donorsFileName), "w") as out_file:
                 donors.append(data)
-                out_file.write(json.dumps(donors, sort_keys=True, indent=4))
+                out_file.write(json.dumps(donors, sort_keys=False, indent=4))
         except Exception as ex:
             raise Exception(f'Exception in Donors.put {str(ex)}')
 
@@ -130,10 +130,10 @@ class Donors(Resource):
 #api.add_resource(Donors, '/donors/list', endpoint="donors")
 #api.add_resource(Donors, '/donors/get/[index]', endpoint="donors")
 #api.add_resource(Donors, '/donors/post/[donor]', endpoint="donors")
-api.add_resource(Donations, '/')
+api.add_resource(Donations, '/Donations/')
 api.add_resource(Products, '/Products', methods=['get'])
 api.add_resource(Donors, '/Donors', methods=['GET', 'PUT'])
-#api.add_resource(Donations, '/donations/get/[count]')
+
 
 
 if __name__ == '__main__':
