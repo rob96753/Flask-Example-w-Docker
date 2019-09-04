@@ -1,5 +1,6 @@
 import unittest
 import GetDonations
+from GetDonations import Donors
 import os
 from unittest import mock
 
@@ -48,6 +49,15 @@ class TestCalc(unittest.TestCase):
         self.assertTrue('RBC' in result)
         self.assertTrue('FRBC' in result)
         products = GetDonations.getList('products')
+
+    def test_get_eligible_donors(self):
+        NUMBER_DONORS_REQUESTED = 5
+        d = Donors()
+        result = d.getEligibleDonors(NUMBER_DONORS_REQUESTED)
+        self.assertTrue(isinstance(result, list))
+        self.assertTrue(len(result) <= NUMBER_DONORS_REQUESTED)
+
+
 
 
 

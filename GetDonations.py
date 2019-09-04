@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from flask_restful import Resource, Api
 import json
 import os
+from datetime import datetime, timedelta
 
 DEFAULT_PATH = '/usr/src/app/'
 DONATIONS = 'donations.json'
@@ -123,6 +124,33 @@ class Donors(Resource):
             raise Exception(f'Exception in Donors.put {str(ex)}')
 
         return True
+
+    def computeDaysSinceDonation(self, x):
+        try:
+            donationFrequency = int(getConfigItem('donation_frequency'))
+            if x.get('last_donation', '').strip() == '':
+                lastDonation = datetime.now() - timedelta(days=donationFrequency)
+            else:
+                lastDonation = datetime.strptime(x.get('last_donation', '01 JAN 2019'), '%d %b %Y')
+            return (datetime.now() - lastDonation).days > donationFrequency
+        except Exception as ex:
+            print(f'Exception Occurred in computeDaysSinceDonation {str(ex)}')
+            return False
+
+    def getEligibleDonors(self, numberDonors):
+        """
+        This uses the filter with a lambda to select blood donors. This isn't a good use of the lambda since
+        the implementation is too complex. It would probably be better to use a function.
+        :param numberDonors:
+        :return:
+        """
+        #donors = list(filter(lambda x: (datetime.now() - datetime.strptime(x.get('last_donation', '01 JAN 2019') if len(x.get('last_donation', '01 JAN 2019').strip()) > 10 else '02 JAN 2019', '%d %b %Y')).days > 56, self.get()))
+        try:
+            donors = list(filter(lambda x: self.computeDaysSinceDonation(x), self.get()))
+            return donors[0:numberDonors]
+        except Exception as ex:
+            raise Exception(f'Exception Occurred in computeDaysSinceDonation {str(ex)}')
+
 
 
 #api.add_resource(Donors, '/donors/list', endpoint="donors")
