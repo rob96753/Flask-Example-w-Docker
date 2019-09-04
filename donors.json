@@ -898,5 +898,25 @@
         "paygrade": "E03",
         "last_donation": "",
         "donor_original_index": ""
+    },
+    {
+        "first_name": "JOSESPH",
+        "middle_name": "F",
+        "last_name": "RIVERAS",
+        "ssn": "947113003",
+        "dodid": "0947112002",
+        "blood_type": "O Positive",
+        "nationality": "United States of America",
+        "military_unit": "",
+        "ltowb": "N",
+        "gender": "M",
+        "race": "Caucasian",
+        "dob": "14 OCT 1989",
+        "service": "USA",
+        "mos": "",
+        "rank": "SPC",
+        "paygrade": "E03",
+        "last_donation": "",
+        "donor_original_index": ""
     }
 ]

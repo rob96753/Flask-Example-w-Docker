@@ -1,6 +1,9 @@
 import unittest
 import GetDonations
 import os
+from unittest import mock
+
+
 #run this with python -m unittest test_GetDonations.py
 
 CONFIG_PATH_ENV_VAR = 'DONATIONS_CONFIG_PATH'
@@ -38,6 +41,17 @@ class TestCalc(unittest.TestCase):
         self.assertTrue(isinstance(result[0], dict))
         self.assertTrue('ltowb' in result[0])
         self.assertTrue('last_name' in result[0])
+
+    def test_get_compatible_products(self):
+        result = GetDonations.getConfigItem('compatableProducts')
+        self.assertTrue(isinstance(result, dict))
+        self.assertTrue('RBC' in result)
+        self.assertTrue('FRBC' in result)
+        products = GetDonations.getList('products')
+
+
+
+
 
 
 if __name__ == '__main__':

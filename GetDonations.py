@@ -24,10 +24,12 @@ def getConfigItem(key):
             if key in config.keys():
                 item = config[key]
             else:
-                raise Exception(f'Exception in getItem for {key}')
+                raise Exception(f'Exception in getConfigItem for {key}')
         return item
+    except json.JSONDecodeError as jex:
+        raise Exception("getConfigItem: JSON Decode Error {jex.msg} {jex.doc} {jex.pos}")
     except Exception as ex:
-        raise Exception("Exception in getItem for {} {}".format(key, str(ex)))
+        raise Exception(f'Exception in getItem for {key} "{str(ex)}"')
 
 def getList(key):
     listOfValues = {}
@@ -38,20 +40,16 @@ def getList(key):
         raise Exception(f'The Environment Must Contain  {CONFIG_PATH_ENV_VAR} As the Path to the Configuration File')
     try:
         configFilePath = os.environ.get(CONFIG_PATH_ENV_VAR)
-        cfp = open(os.path.join(configFilePath, DONATIONS), "r+")
-        config = json.load(cfp)
-        if key in config.keys():
-            listfp = open(os.path.join(configFilePath, config[key]), "r+")
-            listOfValues = json.load(listfp)
-        return listOfValues
-
+        with open(os.path.join(configFilePath, DONATIONS), "r+") as cfp:
+            config = json.load(cfp)
+            if key in config.keys():
+                with open(os.path.join(configFilePath, config[key]), "r+") as listfp:
+                    listOfValues = json.load(listfp)
+            return listOfValues
+    except json.JSONDecodeError as jex:
+        raise Exception("getList: JSON Decode Error {jex.msg} {jex.doc} {jex.pos}")
     except Exception as ex:
         raise Exception(f'Exception in getList for {key} {str(ex)}')
-    finally:
-        if not cfp is None:
-            cfp.close()
-        if not listfp is None:
-            listfp.close()
 
 class Donations(Resource):
     defaultDonation = {}
@@ -74,7 +72,7 @@ class Donations(Resource):
             "expire_date": ""
         }
 
-    def get(self):
+    def get(self, numberDonations):
         return self.defaultDonation
 
 donorTemplate = {
@@ -130,7 +128,7 @@ class Donors(Resource):
 #api.add_resource(Donors, '/donors/list', endpoint="donors")
 #api.add_resource(Donors, '/donors/get/[index]', endpoint="donors")
 #api.add_resource(Donors, '/donors/post/[donor]', endpoint="donors")
-api.add_resource(Donations, '/Donations/')
+api.add_resource(Donations, '/Donations/<donationCount>')
 api.add_resource(Products, '/Products', methods=['get'])
 api.add_resource(Donors, '/Donors', methods=['GET', 'PUT'])
 
