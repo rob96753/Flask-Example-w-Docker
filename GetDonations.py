@@ -125,7 +125,41 @@ class Donors(Resource):
 
         return True
 
+    def findDonor(self, lastName, ssn, dob):
+        """
+        Finds a donor from the list of donors, returning a list of matching donor records
+
+        Business Rule
+        if surname is empty or both dob and ssn are empty, throw an exception. Need at least
+        the last name and DOB or SSN to identify a donor.
+        :param lastName:
+        :param ssn:
+        :param dob:
+        :return:
+        """
+        try:
+            if not datetime.strptime(dob, '%d %b %Y'):
+                dob = ''
+
+            if lastName.strip() == '' or (dob.strip() == '' and ssn.strip() == ''):
+                raise Exception(f"Last Name {lastName} and SSN {ssn} can't Be Empty")
+            donor = None
+            donor = list(filter(lambda x: x.get('surname','').upper() == lastName.upper() and x.get('ssn').upper() == ssn.upper() and x.get('dob', '') .upper() == dob.upper(), self.get()))
+            return donor
+        except ValueError as vex:
+            raise ValueError(f'Exception Occurred in findDonor surName="{lastName}" ssn="{ssn}" dob="{dob}" {str(vex)}')
+        except Exception as ex:
+            raise Exception(f'Exception Occurred in findDonor surName="{lastName}" ssn="{ssn}" dob="{dob}" {str(ex)}')
+
+
+
     def computeDaysSinceDonation(self, x):
+        """
+        Helper function used with filter to identify the date of the last donation.
+        This is an alternative to using a complex lambda function.
+        :param x:
+        :return:
+        """
         try:
             donationFrequency = int(getConfigItem('donation_frequency'))
             if x.get('last_donation', '').strip() == '':

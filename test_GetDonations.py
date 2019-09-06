@@ -57,11 +57,15 @@ class TestCalc(unittest.TestCase):
         self.assertTrue(isinstance(result, list))
         self.assertTrue(len(result) <= NUMBER_DONORS_REQUESTED)
 
-
-
-
-
-
+    def test_find_donor(self):
+        d = Donors()
+        result = d.findDonor('SOMMERSET', '991-92-9392', "2 MAY 1977")
+        self.assertTrue(isinstance(result, list))
+        self.assertTrue(len(result) == 1)
+        self.assertTrue(result[0]['surname'] == 'SOMMERSET', 'Donor Not Found')
+        self.assertRaises(ValueError, d.findDonor, 'TUGG', '980-55-1018', "")
+        self.assertRaises(Exception, d.findDonor, '', '', "21 JUN 1987")
+        self.assertRaises(Exception, d.findDonor, '', '980-55-1018', "21 JUN 1987")
 
 
 if __name__ == '__main__':
