@@ -2,7 +2,7 @@
     {
         "first_name": "Ryan",
         "middle_name": "D",
-        "last_name": "Fitzpatrick",
+        "surname": "Fitzpatrick",
         "ssn": "983-55-0001",
         "dodid": "0835500012",
         "blood_type": "O Negative",
@@ -22,7 +22,7 @@
     {
         "first_name": "John",
         "middle_name": "D",
-        "last_name": "Baptist",
+        "surname": "Baptist",
         "ssn": "983-55-0002",
         "dodid": "0835500020",
         "blood_type": "O Positive",
@@ -42,7 +42,7 @@
     {
         "first_name": "Cody",
         "middle_name": "D",
-        "last_name": "Fredericks",
+        "surname": "Fredericks",
         "ssn": "983-55-0003",
         "dodid": "0835500039",
         "blood_type": "A Negative",
@@ -62,7 +62,7 @@
     {
         "first_name": "James",
         "middle_name": "D",
-        "last_name": "Bacon",
+        "surname": "Bacon",
         "ssn": "983-55-0004",
         "dodid": "0835500047",
         "blood_type": "O Positive",
@@ -82,7 +82,7 @@
     {
         "first_name": "Theodore",
         "middle_name": "D",
-        "last_name": "Garrett",
+        "surname": "Garrett",
         "ssn": "983-55-0005",
         "dodid": "0835500055",
         "blood_type": "O Negative",
@@ -102,7 +102,7 @@
     {
         "first_name": "Garrett",
         "middle_name": "D",
-        "last_name": "Cummins",
+        "surname": "Cummins",
         "ssn": "983-55-0006",
         "dodid": "0835500063",
         "blood_type": "O Negative",
@@ -122,7 +122,7 @@
     {
         "first_name": "Mondero",
         "middle_name": "D",
-        "last_name": "Comre",
+        "surname": "Comre",
         "ssn": "980-55-1021",
         "dodid": "0805510218",
         "blood_type": "O Negative",
@@ -142,7 +142,7 @@
     {
         "first_name": "Timothy",
         "middle_name": "D",
-        "last_name": "Radisson",
+        "surname": "Radisson",
         "ssn": "983-55-0007",
         "dodid": "0835500071",
         "blood_type": "A Positive",
@@ -162,7 +162,7 @@
     {
         "first_name": "Gregory",
         "middle_name": "D",
-        "last_name": "Hammond",
+        "surname": "Hammond",
         "ssn": "983-55-0008",
         "dodid": "0835500080",
         "blood_type": "AB Negative",
@@ -182,7 +182,7 @@
     {
         "first_name": "Anthony",
         "middle_name": "D",
-        "last_name": "Spaniel",
+        "surname": "Spaniel",
         "ssn": "983-55-0009",
         "dodid": "0835500098",
         "blood_type": "O Positive",
@@ -202,7 +202,7 @@
     {
         "first_name": "Teri",
         "middle_name": "D",
-        "last_name": "James",
+        "surname": "James",
         "ssn": "983-55-0010",
         "dodid": "0835500101",
         "blood_type": "O Negative",
@@ -222,7 +222,7 @@
     {
         "first_name": "Harriet",
         "middle_name": "D",
-        "last_name": "Casper",
+        "surname": "Casper",
         "ssn": "983-55-0011",
         "dodid": "0835500110",
         "blood_type": "O Positive",
@@ -242,7 +242,7 @@
     {
         "first_name": "Russell",
         "middle_name": "D",
-        "last_name": "Richards",
+        "surname": "Richards",
         "ssn": "983-55-0012",
         "dodid": "0835500128",
         "blood_type": "O Positive",
@@ -262,7 +262,7 @@
     {
         "first_name": "Tammi",
         "middle_name": "D",
-        "last_name": "Tedish",
+        "surname": "Tedish",
         "ssn": "983-55-0013",
         "dodid": "0835500136",
         "blood_type": "O Positive",
@@ -282,7 +282,7 @@
     {
         "first_name": "Tori",
         "middle_name": "D",
-        "last_name": "Timmins",
+        "surname": "Timmins",
         "ssn": "983-55-0014",
         "dodid": "0835500144",
         "blood_type": "O Positive",
@@ -302,7 +302,7 @@
     {
         "first_name": "Candy",
         "middle_name": "D",
-        "last_name": "Bosch",
+        "surname": "Bosch",
         "ssn": "983-55-0015",
         "dodid": "0835500152",
         "blood_type": "O Negative",
@@ -322,7 +322,7 @@
     {
         "first_name": "Samantha",
         "middle_name": "D",
-        "last_name": "Carter",
+        "surname": "Carter",
         "ssn": "983-55-0016",
         "dodid": "0835500160",
         "blood_type": "O Negative",
@@ -342,7 +342,7 @@
     {
         "first_name": "Dwayne",
         "middle_name": "D",
-        "last_name": "Timmins",
+        "surname": "Timmins",
         "ssn": "983-55-0018",
         "dodid": "0835500187",
         "blood_type": "O Negative",
@@ -362,7 +362,7 @@
     {
         "first_name": "Gerri",
         "middle_name": "D",
-        "last_name": "Griffin",
+        "surname": "Griffin",
         "ssn": "983-55-0019",
         "dodid": "0835500195",
         "blood_type": "AB Negative",
@@ -382,7 +382,7 @@
     {
         "first_name": "Teron",
         "middle_name": "D",
-        "last_name": "Barnes",
+        "surname": "Barnes",
         "ssn": "983-55-0020",
         "dodid": "0835500209",
         "blood_type": "O Positive",
@@ -882,7 +882,7 @@
     {
         "first_name": "ALEXANDER",
         "middle_name": "F",
-        "last_name": "THOMAS",
+        "surname": "THOMAS",
         "ssn": "947081001",
         "dodid": "0947081001",
         "blood_type": "O Positive",
@@ -902,7 +902,7 @@
     {
         "first_name": "JOSESPH",
         "middle_name": "F",
-        "last_name": "RIVERAS",
+        "surname": "RIVERAS",
         "ssn": "947113003",
         "dodid": "0947112002",
         "blood_type": "O Positive",

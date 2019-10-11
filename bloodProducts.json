@@ -1,10 +1,39 @@
-{"products":[
-	{"product":"E0206V00","type":"RBC","expire":"42"},
-	{"product":"E0195V00","type":"RBC","expire":"42"},
-	{"product":"E4635V00","type":"PLT","expire":"5"},
-	{"product":"E5078V00","type":"FRBC","expire":"365"},
-	{"product":"E4995V00","type":"DRBC","expire":"365"},
-	{"product":"E0001V00","type":"WB","expire":"42"},
-	{"product":"E5480V00","type":"FFP","expire":"365"},
-	{"product":"E5165V00","type":"CRYO","expire":"365"}
-]}
+{"comment": "ISBT 128 code",
+	"products": {
+"E0206V00": {
+	"product": "E0206V00",
+	"type": "RBC",
+	"expire": "42"
+},
+"E0195V00": {
+	"product": "E0195V00",
+	"type": "RBC",
+	"expire": "42"
+},
+"E4635V00": {
+"product": "E4635V00", "type": "PLT", "expire": "5"
+},
+"E5078V00": {
+"product": "E5078V00", "type": "FRBC", "expire": "365"},
+"E4995V00": {
+"product": "E4995V00", "type": "DRBC", "expire": "365"
+},
+"E0001V00": {
+"product": "E0001V00", "type": "WB", "expire": "42"},
+ "E5480V00": {"product": "E5480V00", "type": "FFP", "expire": "365"
+},
+"E5165V00": {
+"product": "E5165V00", "type": "CRYO", "expire": "365"
+}
+},
+"joinedProducts": {
+	"frozen": [
+		"E5078V00",
+		"E5480V00"
+	],
+	"fresh": ["E4635V00", "E0206V00"]
+
+	]
+}
+
+}
